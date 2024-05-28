@@ -1,14 +1,14 @@
 module shift_register_inputs(
-    input clk,rstn
+    input clk,rstn,
     input [7:0] data_in,
     input [1:0] selector,  // From the state machine. Determines where do the neuron inputs come From
-    input [1:0] selector_output
+    input [1:0] selector_output,
     
     // The outputs of the neurons0..3 are inputs to the shift register, so it can use them as inputs to the next layer
-    input [7:0] neuron0_output; // The output of the neuron0, is an input to the shift register 
-    input [7:0] neuron1_output; // The output of the neuron1, is an input to the shift register
-    input [7:0] neuron2_output; // The output of the neuron2, is an input to the shift register
-    input [7:0] neuron3_output; // The output of the neuron3, is an input to the shift register
+    input [7:0] neuron0_output, // The output of the neuron0, is an input to the shift register 
+    input [7:0] neuron1_output, // The output of the neuron1, is an input to the shift register
+    input [7:0] neuron2_output, // The output of the neuron2, is an input to the shift register
+    input [7:0] neuron3_output, // The output of the neuron3, is an input to the shift register
 
     // These 4 outputs are the inputs0..3 to each neuron.
     output reg [7:0] neuron_input0, // Input 0 for all neurons on the current layer
@@ -82,6 +82,9 @@ begin
             2'b11   :   begin  
                             network_outputs <= neuron_input3;
             end 
+            default: begin
+                    network_outputs <= network_outputs;
+            end
         endcase
     end
 end

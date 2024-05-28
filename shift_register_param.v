@@ -106,7 +106,13 @@ begin
                         w22<=w23;
                         w23<=b2;
                         b2<=th2;
-                        th2<=data_in;
+                        th2<=w30;
+                        w30<=w31;
+                        w31<=w32;
+                        w32<=w33;
+                        w33<=b3;
+                        b3<=th3;
+                        th3<=data_in;
                         end
             2'b10   :   begin 
                         w00<=w00;

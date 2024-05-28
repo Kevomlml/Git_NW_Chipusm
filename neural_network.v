@@ -2,7 +2,7 @@ module neural_network (
     input wire clk,
     input wire reset,
     input wire changes,
-    input wire [1:0] selector_output
+    input wire [1:0] selector_output,
     input wire [7:0] data_in,
     
     output wire [7:0] network_outputs

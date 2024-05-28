@@ -43,7 +43,7 @@ module tb_neural_network;
         #8
         data_in = 8'd8; //x_in_1
         #8
-       data_in = 8'd7; //x_in_0
+        data_in = 8'd7; //x_in_0
         #8
         changes = 1;
         #8
@@ -55,11 +55,11 @@ module tb_neural_network;
         #8
         data_in = 8'd4; //w33
         #8
-        #data_in = 8'd4; //w32
+        data_in = 8'd4; //w32
         #8
-        #data_in = 8'd4; //w31
+        data_in = 8'd4; //w31
         #8
-        #data_in = 8'd4; //w30
+        data_in = 8'd4; //w30
         #8
         data_in = 8'd0; //th2
         #8
@@ -67,11 +67,11 @@ module tb_neural_network;
         #8
         data_in = 8'd3; //w23
         #8
-        #data_in = 8'd3; //w22
+        data_in = 8'd3; //w22
         #8
-        #data_in = 8'd3; //w21
+        data_in = 8'd3; //w21
         #8
-        #data_in = 8'd3; //w20
+        data_in = 8'd3; //w20
         #8
         data_in = 8'd0; //th1
         #8
@@ -79,11 +79,11 @@ module tb_neural_network;
         #8
         data_in = 8'd2; //w13
         #8
-        #data_in = 8'd2; //w12
+        data_in = 8'd2; //w12
         #8
-        #data_in = 8'd2; //w11
+        data_in = 8'd2; //w11
         #8
-        #data_in = 8'd2; //w10
+        data_in = 8'd2; //w10
         #8
         data_in = 8'd0; //th0
         #8
@@ -91,11 +91,11 @@ module tb_neural_network;
         #8
         data_in = 8'd1; //w03
         #8
-        #data_in = 8'd1; //w02
+        data_in = 8'd1; //w02
         #8
-        #data_in = 8'd1; //w01
+        data_in = 8'd1; //w01
         #8
-        #data_in = 8'd1; //w00
+        data_in = 8'd1; //w00
         #8
         changes=1;
         #8
