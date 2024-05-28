@@ -60,7 +60,6 @@ begin
     end
 
     else begin
-    begin
         case(selector)
             2'b00   :   begin 
                         w00<=w00;
@@ -167,9 +166,6 @@ begin
                         th3<=th3;
                         end
             endcase
-    end
-
-    
     end
 end
     
