@@ -15,7 +15,7 @@ module perceptron(
 );
 
 reg [7:0] sum_p;
-reg [7:0] out;
+reg [7:0] res;
 
 always@(*)
 begin
