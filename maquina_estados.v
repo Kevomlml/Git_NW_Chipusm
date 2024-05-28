@@ -24,13 +24,13 @@ always @(*) begin
     next_state = current_state;
     case (current_state)
         state_data_IN: if (changes) begin
-                        next_state = sate_data_BUFF;
+                        next_state = state_data_BUFF;
                         end
         state_data_BUFF: if (changes) begin
-                        next_state = sate_data_OUT;
+                        next_state = state_data_OUT;
                         end
         state_data_OUT: if (changes) begin
-                        next_state = sate_data_BUFF;
+                        next_state = state_data_BUFF;
                         end
         default: if (changes) begin
                 next_state=current_state;
