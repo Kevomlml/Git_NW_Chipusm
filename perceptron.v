@@ -4,7 +4,7 @@ module perceptron(
     input [7:0] in2,
     input [7:0] in3,
 
-    input [7:0] weight0,
+    input [7:0] weight0, //aaa
     input [7:0] weight1,
     input [7:0] weight2,
     input [7:0] weight3,
