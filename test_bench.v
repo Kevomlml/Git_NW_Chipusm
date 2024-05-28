@@ -7,6 +7,7 @@ module tb_neural_network;
     reg reset;
     reg changes;
     reg [7:0] data_in; 
+    reg [1:0] selector_output
 
     // Salidas
     wire [7:0] network_outputs;
@@ -17,7 +18,8 @@ module tb_neural_network;
         .reset(reset),
         .changes(changes),
         .data_in(data_in),
-        .network_outputs(network_outputs)
+        .network_outputs(network_outputs),
+        .selector_output(selector_output)
     );
 
     always #8 clk = ~clk;
