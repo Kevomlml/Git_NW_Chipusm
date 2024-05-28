@@ -27,7 +27,7 @@ machine machine_inst (
 
 shift_register_inputs shift_reg_inst (
     .clk(clk),
-    .rstn(~reset),
+    .rstn(reset),
     .data_in(data_in),
     .selector(state),
     .selector_output(selector_output),
