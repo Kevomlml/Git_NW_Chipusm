@@ -9,7 +9,7 @@ module tb_neural_network;
     reg [7:0] data_in; 
 
     // Salidas
-    wire [7:0] final_output;
+    wire [7:0] network_outputs;
 
     // Instancia del módulo a probar
     neural_network uut (
@@ -17,7 +17,7 @@ module tb_neural_network;
         .reset(reset),
         .changes(changes),
         .data_in(data_in),
-        .final_output(final_output)
+        .network_outputs(network_outputs)
     );
 
     always #8 clk = ~clk;
