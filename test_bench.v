@@ -23,6 +23,8 @@ module tb_neural_network;
     always #8 clk = ~clk;
     
     initial begin
+        $dumpfile("signals.vcd");
+        $dumpvars(0,tb_neural_network);
         // Inicialización de señales
         clk = 0;
         reset = 1;
@@ -105,6 +107,7 @@ module tb_neural_network;
 
         // Finalizar simulación
         #200;
-        $stop;
+        $finish;
+
     end
 endmodule
