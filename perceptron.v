@@ -14,6 +14,9 @@ module perceptron(
     output reg [7:0] out
 );
 
+reg [7:0] sum_p;
+reg [7:0] out;
+
 always@(*)
 begin
     sum_p=in0*weight0+in1*weight1+in2*weight2+in3*weight3+bias;
