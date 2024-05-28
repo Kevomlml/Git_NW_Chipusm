@@ -2,9 +2,10 @@ module neural_network (
     input wire clk,
     input wire reset,
     input wire changes,
+    input wire [1:0] selector_output
     input wire [7:0] data_in,
     
-    output wire [7:0] final_output
+    output wire [7:0] network_outputs
 );
 
 // Señales internas
@@ -29,6 +30,7 @@ shift_register_inputs shift_reg_inst (
     .rstn(~reset),
     .data_in(data_in),
     .selector(state),
+    .selector_output(selector_output),
     .neuron0_output(neuron0_output),
     .neuron1_output(neuron1_output),
     .neuron2_output(neuron2_output),
@@ -37,6 +39,7 @@ shift_register_inputs shift_reg_inst (
     .neuron_input1(neuron_input1),
     .neuron_input2(neuron_input2),
     .neuron_input3(neuron_input3),
+    .network_outputs(network_outputs)
 );
 
 perceptron perceptron0 (

@@ -1,7 +1,8 @@
 module shift_register_inputs(
     input clk,rstn
     input [7:0] data_in,
-    input [1:0] selector,  // From the state machine. Determines where do the neuron inputs come from
+    input [1:0] selector,  // From the state machine. Determines where do the neuron inputs come From
+    input [1:0] selector_output
     
     // The outputs of the neurons0..3 are inputs to the shift register, so it can use them as inputs to the next layer
     input [7:0] neuron0_output; // The output of the neuron0, is an input to the shift register 
@@ -43,31 +44,46 @@ begin
                             neuron_input1 <= neuron_input0;
                             neuron_input2 <= neuron_input1;
                             neuron_input3 <= neuron_input2;
-                            network_outputs <= neuron_input3;  
+
                         end
             2'b01   :   begin
                             neuron_input0 <= neuron_input0;
                             neuron_input1 <= neuron_input1;
                             neuron_input2 <= neuron_input2;
                             neuron_input3 <= neuron_input3;
-                            network_outputs <= 8'b00000000; // By default the network output will be 8'b00000000.
                         end
             2'b10   :   begin
                             neuron_input0 <= neuron0_output
                             neuron_input1 <= neuron1_output
                             neuron_input2 <= neuron2_output
                             neuron_input3 <= neuron3_output
-                            network_outputs <= 8'b00000000; // By default the network output will be 8'b00000000.
                         end
-            default :   begin
+            default :   begin                               // The default state keeps everything as it was
                             neuron_input0 <= neuron_input0;
                             neuron_input1 <= neuron_input1;
                             neuron_input2 <= neuron_input2;
                             neuron_input3 <= neuron_input3;
-                            network_outputs <= 8'b00000000; // By default the network output will be 8'b00000000.
                         end
 
         endcase
     end
+
+    begin
+        case(selector_output)
+            2'b00   :   begin  
+                            network_outputs <= neuron_input0;
+            end 
+            2'b01   :   begin  
+                            network_outputs <= neuron_input1;
+            end 
+            2'b10   :   begin  
+                            network_outputs <= neuron_input2;
+            end 
+            2'b11   :   begin  
+                            network_outputs <= neuron_input3;
+            end 
+        endcase
+    end
 end
+
 endmodule
