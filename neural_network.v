@@ -14,8 +14,8 @@ wire [7:0] neuron_input0, neuron_input1, neuron_input2, neuron_input3;
 wire [7:0] neuron0_output, neuron1_output, neuron2_output, neuron3_output;
 wire [7:0] w00, w01, w02, w03, b0, th0;
 wire [7:0] w10, w11, w12, w13, b1, th1;
-wire [7:8] w20, w21, w22, w23, b2, th2;
-wire [7:8] w30, w31, w32, w33, b3, th3;
+wire [7:0] w20, w21, w22, w23, b2, th2;
+wire [7:0] w30, w31, w32, w33, b3, th3;
 
 // Instanciando los módulos
 machine machine_inst (
