@@ -32,6 +32,9 @@ always @(*) begin
         state_data_OUT: if (changes) begin
                         next_state = sate_data_BUFF;
                         end
+        default: if (changes) begin
+                next_state=current_state;
+                end
     endcase
 end
 
@@ -41,3 +44,4 @@ always@(posedge clk) begin
     else
         state <= current_state;
 end 
+endmodule

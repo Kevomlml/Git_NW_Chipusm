@@ -53,10 +53,10 @@ begin
                             neuron_input3 <= neuron_input3;
                         end
             2'b10   :   begin
-                            neuron_input0 <= neuron0_output
-                            neuron_input1 <= neuron1_output
-                            neuron_input2 <= neuron2_output
-                            neuron_input3 <= neuron3_output
+                            neuron_input0 <= neuron0_output;
+                            neuron_input1 <= neuron1_output;
+                            neuron_input2 <= neuron2_output;
+                            neuron_input3 <= neuron3_output;
                         end
             default :   begin                               // The default state keeps everything as it was
                             neuron_input0 <= neuron_input0;
